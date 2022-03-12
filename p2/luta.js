@@ -118,6 +118,10 @@ var lutador =  new function(){
         if (n===1) {
             this.estados[lutador.corrente].num=lutador.estados[lutador.corrente].frameIni; 
             somMove.play();
+        }else if(n===2){
+            alert("Anda pra esquerda");
+        }else if(n===3){
+            alert("Anda pra direita");
         }
     }
     
@@ -203,8 +207,11 @@ document.onkeydown = function(e){
         lutador.iniciaEstado(0);
     } else if(keycode===38) {
         lutador.iniciaEstado(1);
-    } 
+    } else if(keycode === 37){
+        lutador.iniciaEstado(2);
+    }else if(keycode === 39){
+        lutador.iniciaEstado(3);
+    }
 }
 
 GameLoop();
-
